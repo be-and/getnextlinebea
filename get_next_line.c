@@ -14,12 +14,11 @@
 
 static char	*join_and_free(char *stash, char *buffer)
 {
-	char	*temp;
+	char	*new_stash;
 
-	temp = stash;
-	stash = ft_strjoin(temp, buffer);
-	free(temp);
-	return (stash);
+	new_stash = ft_strjoin(stash, buffer);
+	free(stash);
+	return (new_stash);
 }
 
 static char	*read_and_save(int fd, char *stash)
@@ -84,8 +83,12 @@ char	*get_next_line(int fd)
 	static char	*stash;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
+		free(stash);
+		stash = NULL;
 		return (NULL);
+	}
 	stash = read_and_save(fd, stash);
 	if (!stash)
 		return (NULL);

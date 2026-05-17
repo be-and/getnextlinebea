@@ -20,13 +20,16 @@ int	main(void)
 	char	*line;
 
 	fd = open("test.txt", O_RDONLY);
-	while (1)
+	if (fd == -1)
+		return (1);
+	line = get_next_line(fd);
+	while (line)
 	{
-		line = get_next_line(fd);
-		if (!line)
-			break ;
 		printf("%s", line);
 		free(line);
+		line = get_next_line(fd);
 	}
 	close(fd);
+	return (0);
 }
+
