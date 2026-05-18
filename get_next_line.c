@@ -6,7 +6,7 @@
 /*   By: bandrade <bandrade@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/15 13:24:37 by bandrade      #+#    #+#                 */
-/*   Updated: 2026/05/15 15:02:36 by bandrade      ########   odam.nl         */
+/*   Updated: 2026/05/18 12:55:10 by bandrade      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static char	*save_rest(char *stash)
 	i = 0;
 	while (stash[i] && stash[i] != '\n')
 		i++;
-	if (!stash[i])
+	if (!stash[i] || !stash[i + 1])
 	{
 		free(stash);
 		return (NULL);
