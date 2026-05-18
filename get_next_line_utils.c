@@ -6,7 +6,7 @@
 /*   By: bandrade <bandrade@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/15 13:24:30 by bandrade      #+#    #+#                 */
-/*   Updated: 2026/05/15 15:03:12 by bandrade      ########   odam.nl         */
+/*   Updated: 2026/05/18 13:40:04 by bandrade      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,13 +121,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	result[i] = '\0';
 	return (result);
 }
-
-// int	main(void)
-// {
-// 	printf("%zu\n", ft_strlen("Beatriz"));
-// 	printf("%s\n", ft_strdup("Beatriz"));
-// 	printf("%s\n", ft_strchr("Beatriz", 'a'));
-// 	printf("%s\n", ft_strjoin("Beatriz ", "Andrade"));
-// 	printf("%s\n", ft_substr("Beatriz Andrade", 8, 3));
-// 	return (0);
-// }
