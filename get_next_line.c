@@ -6,7 +6,7 @@
 /*   By: bandrade <bandrade@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/15 13:24:37 by bandrade      #+#    #+#                 */
-/*   Updated: 2026/05/18 12:42:27 by bandrade      ########   odam.nl         */
+/*   Updated: 2026/05/20 14:46:03 by bandrade      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,8 @@ char	*get_next_line(int fd)
 	static char	*stash;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-	{
-		free(stash);
-		stash = NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	}
 	stash = read_and_save(fd, stash);
 	if (!stash)
 		return (NULL);
